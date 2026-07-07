@@ -17,7 +17,7 @@ def load_data(use_github=True, uploaded_file=None):
         pd.DataFrame: Загруженные данные
     """
     if use_github:
-        url = 'https://raw.githubusercontent.com/TimurQuich/Machine-learning-for-determining-the-ESP-overhaul-period/main/Dataset_for_ESP.xlsx'
+        url = 'https://raw.githubusercontent.com/TimurQuich/ESP-MRP-Prediction/main/data/Dataset_for_ESP.xlsx'
         try:
             df = pd.read_excel(url)
             st.sidebar.success("✅ Данные загружены с GitHub")

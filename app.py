@@ -414,7 +414,7 @@ else:
 
     st.subheader("📊 Предварительный просмотр данных")
     try:
-        url = 'https://raw.githubusercontent.com/TimurQuich/Machine-learning-for-determining-the-ESP-overhaul-period/main/Dataset_for_ESP.xlsx'
+        url = 'https://raw.githubusercontent.com/TimurQuich/ESP-MRP-Prediction/main/data/Dataset_for_ESP.xlsx'
         preview_df = pd.read_excel(url)
         st.dataframe(preview_df.head(10))
     except:
