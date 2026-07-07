@@ -1,2 +1,67 @@
-# ESP-MRP-Prediction
-Machine learning project for predicting ESP (Electric Submersible Pump) mean time between failures (MTBF) using production data. The model helps estimate equipment lifespan based on operational parameters like pump depth, flow rates, and water cut.
+# 🔧 Прогнозирование межремонтного периода электроцентробежных насосов
+
+[![Streamlit App](https://img.shields.io/badge/Streamlit-App-brightgreen)](https://your-app-url.com)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## 📋 Описание проекта
+
+Данный проект представляет собой веб-приложение для прогнозирования межремонтного периода (МРП) электроцентробежных насосов (ЭЦН) с использованием методов машинного обучения.
+
+### 🎯 Цель
+Разработка инструмента для прогнозирования срока службы ЭЦН на основе эксплуатационных параметров, что позволяет оптимизировать планово-предупредительные ремонты.
+
+### 📊 Датасет
+- **Источник**: Данные по эксплуатации ЭЦН
+- **Количество записей**: 347
+- **Целевая переменная**: МРП (межремонтный период)
+- **Признаки**: 7 основных + 6 созданных
+
+## 🚀 Функциональность
+
+- ✅ Загрузка данных (GitHub или локальный файл)
+- ✅ Предобработка данных и создание признаков
+- ✅ Визуализация распределения целевой переменной
+- ✅ Обучение и сравнение 4 моделей ML:
+  - Linear Regression
+  - Random Forest
+  - Gradient Boosting
+  - Extra Trees
+- ✅ Оптимизация гиперпараметров (GridSearchCV, RandomizedSearchCV, Optuna)
+- ✅ Анализ важности признаков
+- ✅ Корреляционная матрица
+- ✅ Интерактивные графики
+
+## 📈 Результаты
+
+### Сравнение моделей
+| Модель | MAE | RMSE |
+|--------|-----|------|
+| Random Forest | 48.38 | 137.28 |
+| Extra Trees | 52.16 | 159.30 |
+| Gradient Boosting | 50.74 | 140.62 |
+| Linear Regression | 113.02 | 200.18 |
+
+### Оптимизация Random Forest
+| Метод | MAE | RMSE | Время (сек) |
+|-------|-----|------|-------------|
+| Original | 48.38 | 137.28 | 0 |
+| GridSearchCV | 51.60 | 135.08 | 45.2 |
+| RandomizedSearchCV | 51.07 | 135.65 | 12.3 |
+| Optuna | 48.82 | 136.54 | 30.1 |
+
+### Топ-5 важных признаков
+1. Qж факт / Qн факт
+2. Глубина спуска, м
+3. Глубина * (% в)
+4. % в
+5. (% в)^2
+
+## 🛠 Технологии
+
+- **Python 3.9+**
+- **Streamlit** - веб-фреймворк
+- **Scikit-learn** - ML модели
+- **Optuna** - оптимизация гиперпараметров
+- **Pandas, NumPy** - обработка данных
+- **Matplotlib, Seaborn** - визуализация
