@@ -18,8 +18,8 @@ pythonenv*
 *.pyc
 
 # Data files (исключаем реальные данные)
-data/*.xlsx
-data/*.csv
+# data/*.xlsx
+# data/*.csv
 !data/*_template.csv
 !data/*_sample.csv
 
